@@ -3,7 +3,7 @@ This project was done using React JS
 
 *Requirements fot the task,*
 
-It needs to increase or decrease the per unit quantity, which should automatically update the total Quantity and Amount.
+=>It needs to increase or decrease the per unit quantity, which should automatically update the total Quantity and Amount.
 
 OUTPUT: https://sha-cart-items.netlify.app/
 
