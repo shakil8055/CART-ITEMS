@@ -5,7 +5,7 @@ This project was done using React JS
 
 =>It needs to increase or decrease the per unit quantity, which should automatically update the total Quantity and Amount.
 
-OUTPUT: https://sha-cart-items.netlify.app/
+OUTPUT: https://sha-cart-items.netlify.app
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
