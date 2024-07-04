@@ -24,8 +24,8 @@ function CartCard() {
             <>
               <div
                 key={i}
-                className="card mb-5 border border-secondary"
-                style={{ minWidth: "100%", maxWidth: "540px" }}
+                className="card mb-5 border-5 border-secondary rounded"
+                style={{ minWidth: "100%", maxWidth: "240px" }}
               >
                 <div className="row g-0">
                   <div className="col-md-4 cardimg">
