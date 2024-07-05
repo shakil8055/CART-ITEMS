@@ -1,9 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import CartCard from "./Components/CartCard";
+import Header from "./Components/Header"
+
+
 
 export const UserContext = React.createContext();
 
 function App() {
+
   const [product, setProduct] = useState([
     {
       id: 1,
@@ -69,10 +73,21 @@ function App() {
     },
   ]);
 
+
+
+  
   return (
+    
     <>
       <UserContext.Provider value={{ product, setProduct }}>
-        <div className="container my-5">
+      
+        <div className="header mb-5 border-5 border-secondary rounded">
+              
+            <Header/>  
+        </div>
+        
+        <div className="container ">
+          
           <CartCard />
         </div>
       </UserContext.Provider>

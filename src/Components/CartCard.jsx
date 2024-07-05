@@ -7,21 +7,25 @@ function CartCard() {
     <>
       <div className="container">
         {product.map((e, i) => {
+           const [quantity, setQuantity] = useState(1);
+
+           const increase = () => {
+             setQuantity(quantity => quantity + 1, );
+           };
+ 
+           const decrease = () => {
+             setQuantity(quantity => Math.max(quantity  - 1, 1));
+           }; 
+
           const discountPrice = Math.round(e.price * (e.discountPercentage / 100));
           const discountedPrice = (e.price-discountPrice);
+          const totalAmount = (discountedPrice * quantity);
+
          
-          const [quantity, setQuantity] = useState(1);
-
-          const increase = () => {
-            setQuantity(quantity => quantity + 1, );
-          };
-
-          const decrease = () => {
-            setQuantity(quantity => Math.max(quantity  - 1, 1));
-          };
           
           return (
             <>
+            
               <div
                 key={i}
                 className="card mb-5 border-5 border-secondary rounded"
@@ -108,19 +112,13 @@ function CartCard() {
                         </div>
                         <div className="d-flex justify-content-between align-items-center">
                           Total Amount To be paid :
-                          <h5 className="card-text">₹{discountedPrice * quantity}</h5>
+                          <h5 className="card-text">₹{totalAmount}</h5>
                         </div>
                       </div>
                       
                       <button
                         type="button"
-                        className="btn btn-success float-end my-3"
-                      >
-                        Proceed to pay
-                      </button>
-                      <button
-                        type="button"
-                        className="btn btn-outline-danger my-3"
+                        className="btn btn-outline-danger float-end my-3"
                         >
                         Remove From Cart
                       </button>
