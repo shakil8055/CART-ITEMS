@@ -1,16 +1,18 @@
-import React, { useState, useContext } from "react";
-import { UserContext } from "../App";
+import React from "react";
+import { useUserContext } from "../ContextProvider";
 
 function Header() {
-  let { total, setTotal} = useContext(UserContext);
-  return (
-    <>       
-      <div>
+  const { cardQuantity, cardAmount } = useUserContext();
 
-            <h1 className="text-decoration-underline">CART ITEMS</h1>
+  return (
+    <>
+      <header>
+         <>       
+      <div>
+      {/* <div className="col">No of items in Cart: {cardQuantity}</div> */}
               <div className="d-flex justify-content-between align-items-center">
                           Total Cart Value:
-                          <p className="card-text">₹{}</p>
+                          <p className="card-text">₹{ (cardAmount).toFixed(2)}</p>
               </div>
               <div className="d-flex justify-content-between align-items-center">
                           Shipping Charges:
@@ -19,23 +21,25 @@ function Header() {
             <hr></hr>
             <div className="d-flex justify-content-between align-items-center">
               <h4>Total Amount To Be Paid:</h4>
-              <h4 className="card-text">₹{}</h4>
+              <h4 className="card-text">₹{ (cardAmount).toFixed(2)}</h4>
               </div>
               
                 <button
                 type="button"
-                className="btn btn-success mr-10 col-xs-2 margin-left btn-spacing float-end my-3 "
+                className="btn btn-success mr-10 col-xs-2 mx-3 float-end m-3 "
                 >
                         Proceed to pay
               </button>
               
               <button
                 type="button"
-                className="btn btn-danger mr-10 col-xs-2 margin-left float-end  my-3 "
+                className="btn btn-danger mr-10 col-xs-2  float-end  my-3 "
                 >
                         Clear Cart
               </button> 
       </div>
+    </>
+      </header>
     </>
   );
 }
