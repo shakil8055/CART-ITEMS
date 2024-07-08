@@ -178,11 +178,17 @@ const Card = () => {
                   </div>
                   <div className="row g-0 p-4 subtotal">
                     <div className="col ">
+                    <div className="row">
+                        <div className="card-title col fw-bold">
+                        Inclusive of all taxes
+                        </div>
+                        <div className="card-title col text-end">Free shipping</div>
+                      </div>
                       <div className="row">
                         <div className="card-title col">
                           Original Price (1 item) :
                         </div>
-                        <div className="card-title col text-end">${price}</div>
+                        <div className="card-title col text-end">₹{price}</div>
                       </div>
                       <div className="row">
                         <div className="card-title col text-success">
@@ -194,7 +200,7 @@ const Card = () => {
                       </div>
                       <div className="row">
                         <div className="card-title col">
-                          Final Price (Price - Discount) :
+                          Final Price (Price After Discount) :
                         </div>
                         <div className="card-title col  text-end ">
                         ₹{priceAfterDiscount}
@@ -202,7 +208,7 @@ const Card = () => {
                       </div>
                       <div className="row">
                         <div className="card-title col d-flex align-items-center">
-                          Sub-Total Amount (Final price * Quantity) :
+                          Sub-Total Amount  :
                         </div>
                         <div className="card-title col text-end fs-4 fw-normal">
                         ₹{subTotal}
